@@ -23,12 +23,10 @@ export default function App() {
 
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                <a
-                  href="#about"
-                  className="hover:text-fire transition duration-300 px-3 py-2 rounded-md font-medium"
-                >
-                  브랜드 소개
-                </a>
+              <a href="#about" className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium">
+                브랜드 소개
+              </a>
+
                 <a
                   href="#menu"
                   className="hover:text-fire transition duration-300 px-3 py-2 rounded-md font-medium"

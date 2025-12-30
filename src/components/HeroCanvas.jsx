@@ -16,7 +16,6 @@ export default function HeroCanvas({ children }) {
     const hero = heroRef.current;
     if (!canvas || !hero) return;
 
-    // ✅ alpha:true + clearAlpha(0) => 캔버스 배경이 투명 (아래 UI 가림 방지)
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
@@ -117,18 +116,18 @@ export default function HeroCanvas({ children }) {
       className="relative h-screen flex items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/main.jpeg')",
+          "linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('/main.jpeg')",
       }}
     >
-      {/* ✅ 캔버스는 항상 맨 아래(z-0) */}
+      {/* canvas는 무조건 맨 아래 */}
       <canvas
         ref={canvasRef}
         aria-hidden="true"
         className="absolute inset-0 w-full h-full z-0 pointer-events-none"
       />
 
-      {/* ✅ 텍스트/버튼은 항상 위(z-10) */}
-      <div id="hero-content" className="text-center px-4 relative z-10">
+      {/* 컨텐츠는 무조건 위 */}
+      <div id="hero-content" className="relative z-10 text-center px-4">
         {children}
       </div>
     </header>

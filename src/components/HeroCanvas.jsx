@@ -7,18 +7,24 @@ export default function HeroCanvas({ children }) {
 
   useEffect(() => {
     const reduceMotion =
-      window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) return;
 
     const canvas = canvasRef.current;
     const hero = heroRef.current;
-    if (!canvas || !hero || reduceMotion) return;
+    if (!canvas || !hero) return;
 
+    // ✅ alpha:true + clearAlpha(0) => 캔버스 배경이 투명 (아래 UI 가림 방지)
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
       antialias: true,
+      premultipliedAlpha: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(0x000000, 0);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
@@ -44,11 +50,11 @@ export default function HeroCanvas({ children }) {
       transparent: true,
       opacity: 0.65,
       depthWrite: false,
-      color: 0xffffff,
     });
 
     const points = new THREE.Points(geometry, material);
     scene.add(points);
+
     scene.fog = new THREE.Fog(0x000000, 4, 14);
 
     let mouseX = 0,
@@ -92,7 +98,6 @@ export default function HeroCanvas({ children }) {
       renderer.render(scene, camera);
       raf = requestAnimationFrame(tick);
     };
-
     tick();
 
     return () => {
@@ -115,8 +120,15 @@ export default function HeroCanvas({ children }) {
           "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/main.jpeg')",
       }}
     >
-      <canvas id="hero-canvas" ref={canvasRef} aria-hidden="true" />
-      <div id="hero-content" className="relative z-10 text-center px-4">
+      {/* ✅ 캔버스는 항상 맨 아래(z-0) */}
+      <canvas
+        ref={canvasRef}
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
+      />
+
+      {/* ✅ 텍스트/버튼은 항상 위(z-10) */}
+      <div id="hero-content" className="text-center px-4 relative z-10">
         {children}
       </div>
     </header>

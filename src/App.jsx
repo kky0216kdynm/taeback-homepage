@@ -144,7 +144,50 @@ export default function App() {
         </div>
       </section>
 
-      {/* (나머지 business/locations/inquiry/footer는 기존 그대로 유지 가능) */}
+      <section id="info">
+          <div className="container">
+            <h2 className="sectionTitle">안내</h2>
+            <p className="sectionSub">운영 시간/위치/주차 안내 등 필요한 정보를 여기에 채워 넣을 수 있어요.</p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: 14 }}>
+              {[
+                { t: '연탄 불향', d: '세팅부터 굽기까지 가장 맛있는 타이밍을 맞춥니다.' },
+                { t: '단체 가능', d: '모임/회식도 편하게. 좌석 구성은 매장 상황에 맞춰드립니다.' },
+                { t: '식사 메뉴', d: '냉면/찌개/볶음밥까지 한 자리에서.' },
+              ].map((c) => (
+                <div key={c.t} className="panel" style={{ padding: 16 }}>
+                  <div style={{ fontWeight: 900, marginBottom: 6 }}>{c.t}</div>
+                  <div style={{ color: 'var(--muted)', lineHeight: 1.6, fontSize: 14 }}>{c.d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div className="container">
+            <h2 className="sectionTitle">문의</h2>
+            <p className="sectionSub">전화번호/카카오/네이버 지도 링크 등을 여기에 연결하면 완성입니다.</p>
+
+            <div className="panel" style={{ padding: 18 }}>
+              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+                <a className="btn primary" href="#" onClick={(e) => e.preventDefault()}>
+                  전화 걸기
+                </a>
+                <a className="btn" href="#" onClick={(e) => e.preventDefault()}>
+                  지도 보기
+                </a>
+                <a className="btn" href="#" onClick={(e) => e.preventDefault()}>
+                  예약하기
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className="footer">
+          <div className="container">© {new Date().getFullYear()} 태백 생연탄구이</div>
+        </footer>
     </div>
   );
 }

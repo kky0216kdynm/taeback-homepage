@@ -29,19 +29,19 @@ export default function App() {
 
                 <a
                   href="#menu"
-                  className="hover:text-fire transition duration-300 px-3 py-2 rounded-md font-medium"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
                 >
                   메뉴 안내
                 </a>
                 <a
                   href="#business"
-                  className="hover:text-fire transition duration-300 px-3 py-2 rounded-md font-medium"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
                 >
                   창업 안내
                 </a>
                 <a
                   href="#locations"
-                  className="hover:text-fire transition duration-300 px-3 py-2 rounded-md font-medium"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
                 >
                   매장 찾기
                 </a>

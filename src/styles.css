@@ -1,0 +1,109 @@
+/* 기본 본문 폰트: 나눔명조 */
+body { font-family: 'Nanum Myeongjo', serif; }
+/* 제목 및 로고 강조 폰트: 고운바탕 */
+h1, h2, h3, .brand-font, .title-font { font-family: 'Gowun Batang', serif; font-weight: 700; }
+
+.bg-coal { background-color: #1a1a1a; }
+.text-fire { color: #006400; }
+.bg-fire { background-color: #006400; }
+.text-bio { color: #006400; }
+.bg-bio { background-color: #006400; }
+
+/* --- Interactive layer (Three.js canvas + GSAP helpers) --- */
+header#hero { position: relative; }
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+#hero-content { position: relative; z-index: 10; }
+.js-reveal { will-change: transform, opacity; }
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal { transform: none !important; opacity: 1 !important; }
+}
+
+/* ===== Menu: 1-row infinite marquee (hover해도 안멈춤) ===== */
+.menu-showcase{ position:relative; }
+
+.menu-fade{
+  position:absolute;
+  top:0; bottom:0;
+  width: 120px;
+  pointer-events:none;
+  z-index: 5;
+}
+.menu-fade-left{ left:0; background:linear-gradient(to right, rgba(0,0,0,.92), rgba(0,0,0,0)); }
+.menu-fade-right{ right:0; background:linear-gradient(to left, rgba(0,0,0,.92), rgba(0,0,0,0)); }
+
+.menu-viewport{
+  overflow: hidden;
+  padding: 10px 110px 18px 110px;
+}
+@media (max-width: 640px){
+  .menu-viewport{ padding-left: 20px; padding-right: 20px; }
+}
+@media (min-width: 641px) and (max-width: 1023px){
+  .menu-viewport{ padding-left: 40px; padding-right: 40px; }
+}
+
+.menu-track{
+  display:flex;
+  gap: 22px;
+  width: max-content;
+  will-change: transform;
+}
+
+.menu-card{
+  width: 230px;
+  border-radius: 22px;
+  overflow:hidden;
+  background: rgba(24,24,27,.55);
+  border:1px solid rgba(63,63,70,.55);
+  transform-style:preserve-3d;
+  will-change: transform;
+  flex: 0 0 auto;
+  position: relative;
+}
+@media (max-width: 640px){
+  .menu-card{ width: 170px; border-radius: 18px; }
+  .menu-track{ gap: 16px; }
+}
+@media (min-width: 641px) and (max-width: 1023px){
+  .menu-card{ width: 200px; }
+}
+
+.menu-card img{
+  width:100%;
+  aspect-ratio: 1 / 1;
+  object-fit:cover;
+  display:block;
+  filter:saturate(1.05) contrast(1.05);
+}
+.menu-label{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:12px;
+  padding:10px 12px;
+  border-radius: 16px;
+  background: rgba(10,10,10,.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color:#fff;
+  font-weight:800;
+  text-align:center;
+  letter-spacing:-0.02em;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+/* marquee에서는 dots는 사용 안함 */
+.menu-dots{ display:none; }
+
+@media (prefers-reduced-motion: reduce){
+  .menu-track{ transform:none !important; }
+  .menu-viewport{ overflow-x:auto; }
+  .menu-card{ transform:none !important; }
+}

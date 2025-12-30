@@ -112,7 +112,7 @@ export default function HeroCanvas({ children }) {
       className="relative h-screen flex items-center justify-center bg-cover bg-center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('src/assets/main.jpeg')",
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/main.jpeg')",
       }}
     >
       <canvas id="hero-canvas" ref={canvasRef} aria-hidden="true" />

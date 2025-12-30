@@ -2,20 +2,20 @@ import { useEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 
 const MENUS = [
-  { src: "src/assets/menu/1.jpg", title: "갈매기살" },
-  { src: "src/assets/menu/11.jpg", title: "삼겹살" },
-  { src: "src/assets/menu/3.jpg", title: "돼지갈비" },
-  { src: "src/assets/menu/5.jpg", title: "뒷고기" },
-  { src: "src/assets/menu/7.jpg", title: "목살" },
-  { src: "src/assets/menu/6.jpg", title: "막창" },
-  { src: "src/assets/menu/12.jpg", title: "마늘고추장육회" },
-  { src: "src/assets/menu/13.jpg", title: "재래식 돼지모둠" },
-  { src: "src/assets/menu/9.jpg", title: "물냉면" },
-  { src: "src/assets/menu/10.jpg", title: "비빔냉면" },
-  { src: "src/assets/menu/2.jpg", title: "계란찜" },
-  { src: "src/assets/menu/4.jpg", title: "된장찌개" },
-  { src: "src/assets/menu/14.jpg", title: "된장술밥" },
-  { src: "src/assets/menu/15.jpg", title: "오돌뼈볶음밥" },
+  { src: "/menu/1.jpg", title: "갈매기살" },
+  { src: "/menu/11.jpg", title: "삼겹살" },
+  { src: "/menu/3.jpg", title: "돼지갈비" },
+  { src: "/menu/5.jpg", title: "뒷고기" },
+  { src: "/menu/7.jpg", title: "목살" },
+  { src: "/menu/6.jpg", title: "막창" },
+  { src: "/menu/12.jpg", title: "마늘고추장육회" },
+  { src: "/menu/13.jpg", title: "재래식 돼지모둠" },
+  { src: "/menu/9.jpg", title: "물냉면" },
+  { src: "/menu/10.jpg", title: "비빔냉면" },
+  { src: "/menu/2.jpg", title: "계란찜" },
+  { src: "/menu/4.jpg", title: "된장찌개" },
+  { src: "/menu/14.jpg", title: "된장술밥" },
+  { src: "/menu/15.jpg", title: "오돌뼈볶음밥" },
 ];
 
 export default function MenuMarquee({ speed = 70, direction = "left" }) {

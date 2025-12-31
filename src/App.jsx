@@ -407,7 +407,7 @@ export default function App() {
 
               <button
                 type="button"
-                className="w-full bg-fire hover:bg-orange-700 text-white font-bold py-5 rounded-sm transition duration-300 text-2xl title-font shadow-lg mt-4"
+                className="w-full bg-fire hover:bg-gray-500 text-white font-bold py-5 rounded-sm transition duration-300 text-2xl title-font shadow-lg mt-4"
               >
                 상담 신청하기
               </button>

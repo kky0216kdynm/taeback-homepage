@@ -195,7 +195,7 @@ export default function App() {
               <div className="relative rounded-sm shadow-2xl overflow-hidden group">
                 <div className="absolute inset-0 border-4 border-fire/20 z-10 group-hover:border-fire/50 transition duration-500" />
                 <img
-                  src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop"
+                  src="pov.png"
                   alt="매장 인테리어"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-105"
                 />

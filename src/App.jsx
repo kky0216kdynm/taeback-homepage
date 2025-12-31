@@ -61,26 +61,29 @@ export default function App() {
       </nav>
 
       {/* HERO */}
-      <HeroCanvas>
+     
+    <HeroCanvas>
+      <div className="pt-24 md:pt-28">
         <img
           src="/logo.png"
-          width="600"
-          height="400"
           alt="태백생연탄구이 로고"
+          className="mx-auto w-[320px] sm:w-[420px] md:w-[520px] h-auto"
         />
-        <p className="text-gray-200 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-medium">
+
+        <p className="text-gray-200 text-lg sm:text-xl md:text-2xl mt-6 mb-8 max-w-2xl mx-auto font-medium">
           추억의 연탄불 위에서 피어나는 육즙의 향연.
           <br />
-          <span className="font-bold text-white">태백생연탄구이</span>와 함께
-          성공의 역사를 쓰세요.
+          <span className="font-bold text-white">태백생연탄구이</span>와 함께 성공의 역사를 쓰세요.
         </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
+
+        <div className="flex flex-col sm:flex-row justify-center gap-6 pb-8">
           <a
             href="#inquiry"
             className="bg-white text-black title-font font-bold py-4 px-12 rounded-sm text-xl hover:bg-gray-200 transition duration-300"
           >
             가맹 상담 신청
           </a>
+
           <a
             href="#menu"
             className="border-2 border-white text-white title-font font-bold py-4 px-12 rounded-sm text-xl hover:bg-white hover:text-black transition duration-300"
@@ -88,7 +91,9 @@ export default function App() {
             메뉴 둘러보기
           </a>
         </div>
-      </HeroCanvas>
+      </div>
+    </HeroCanvas>
+
 
       {/* ABOUT */}
       <section id="about" className="py-32 bg-zinc-900/80 relative">
@@ -439,12 +444,13 @@ export default function App() {
             </div>
 
             <div className="flex space-x-8">
-              <a href="#" className="text-gray-400 hover:text-fire transition text-lg">
-                인스타그램
-              </a>
-              <a href="#" className="text-gray-400 hover:text-bio transition text-lg">
-                블로그
-              </a>
+            <a href="#" className="text-gray-400 hover:text-[#006400] transition text-lg">
+              인스타그램
+            </a>
+            <a href="#" className="text-gray-400 hover:text-[#006400] transition text-lg">
+              블로그
+            </a>
+
             </div>
           </div>
         </div>

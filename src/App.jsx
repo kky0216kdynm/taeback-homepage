@@ -287,18 +287,17 @@ export default function App() {
             <div className="bg-zinc-900/50 p-10 rounded-sm js-reveal border-2 border-zinc-800 hover:border-fire transition duration-300 group">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-3xl font-bold text-white">
-                  본점 (수원 권선)
+                  본점 (용인역북점)
                 </h3>
                 <span className="bg-fire text-white text-sm font-bold px-3 py-1 rounded-sm title-font">
                   MAIN
                 </span>
               </div>
               <p className="text-gray-300 text-xl mb-3 flex items-center">
-                <span className="text-2xl mr-2">📍</span> 경기 수원시 권선구
-                세권로 304번길 30-2
+                <span className="text-2xl mr-2">📍</span> 경기 용인시 처인구 명지로60번길 8-3 j1 주차타워 203호 태백생연탄구이 용인역북점
               </p>
               <p className="text-gray-500 text-lg mb-10 ml-8">
-                (지번: 권선동 1259-2)
+                (지번: 경기 용인시 처인구 역북동 757)
               </p>
               <a
                 href="https://map.naver.com/p/entry/place/1626802639"
@@ -313,18 +312,17 @@ export default function App() {
             <div className="bg-zinc-900/50 p-10 rounded-sm js-reveal border-2 border-zinc-800 hover:border-bio transition duration-300 group">
               <div className="flex justify-between items-start mb-6">
                 <h3 className="text-3xl font-bold text-white">
-                  2호점 (수원 인계)
+                  2호점 (수원아주대점)
                 </h3>
                 <span className="bg-bio text-white text-sm font-bold px-3 py-1 rounded-sm title-font">
                   BRANCH
                 </span>
               </div>
               <p className="text-gray-300 text-xl mb-3 flex items-center">
-                <span className="text-2xl mr-2">📍</span> 경기 수원시 팔달구
-                장다리로 266
+                <span className="text-2xl mr-2">📍</span> 경기 수원시 영통구 월드컵로179번길 14-12 1층
               </p>
               <p className="text-gray-500 text-lg mb-10 ml-8">
-                (지번: 인계동 965-1)
+                (지번: 경기 수원시 영통구 원천동 29-35)
               </p>
               <a
                 href="https://map.naver.com/p/entry/place/2065542755"

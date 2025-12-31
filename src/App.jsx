@@ -1,7 +1,7 @@
 import HeroCanvas from "./components/HeroCanvas.jsx";
 import MenuMarquee from "./components/MenuMarquee.jsx";
 import useGsapReveals from "./components/useGsapReveals.js";
-import povImg from "/assets/pov.png";
+import povImg from "./assets/pov.png";
 
 export default function App() {
   useGsapReveals();

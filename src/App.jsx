@@ -1,6 +1,7 @@
 import HeroCanvas from "./components/HeroCanvas.jsx";
 import MenuMarquee from "./components/MenuMarquee.jsx";
 import useGsapReveals from "./components/useGsapReveals.js";
+import povImg from "/assets/pov.png";
 
 export default function App() {
   useGsapReveals();
@@ -195,7 +196,7 @@ export default function App() {
               <div className="relative rounded-sm shadow-2xl overflow-hidden group">
                 <div className="absolute inset-0 border-4 border-fire/20 z-10 group-hover:border-fire/50 transition duration-500" />
                 <img
-                  src="/pov.png"
+                  src={povImg}
                   alt="매장 인테리어"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-105"
                 />

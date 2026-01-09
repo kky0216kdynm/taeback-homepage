@@ -14,9 +14,6 @@ function Pill({ children, className = "" }) {
   );
 }
 
-
-
-
 /** ---------- Donut Chart (SVG) + draw animation ---------- */
 function AnimatedArc({ d, color, strokeWidth, delay = 0 }) {
   return (
@@ -38,7 +35,6 @@ function DonutChart({
   size = 320,
   stroke = 46,
   segments = [],
-  centerIcon = "💰",
   centerPercentText = "0%",
   centerLabel = "순이익",
 }) {
@@ -123,7 +119,6 @@ function DonutChart({
 
       {/* Center label */}
       <div className="absolute text-center select-none">
-        <div className="text-3xl mb-2">{centerIcon}</div>
         <div className="text-5xl font-black tracking-tight text-emerald-950">
           {centerPercentText}
         </div>
@@ -168,7 +163,6 @@ function ProfitCard({ title, netText, icon, items, profitPercent }) {
             size={340}
             stroke={46}
             segments={items.map(({ label, value, color }) => ({ label, value, color }))}
-            centerIcon={icon}
             centerPercentText={`${profitPercent}%`}
             centerLabel="순이익"
           />

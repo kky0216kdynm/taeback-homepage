@@ -267,7 +267,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      <ProfitabilityShowcase />
+      <ProfitabilityShowcase/>
 
       {/* LOCATIONS */}
       <section id="locations" className="py-32 bg-black">

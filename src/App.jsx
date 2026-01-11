@@ -2,6 +2,8 @@ import HeroCanvas from "./components/HeroCanvas.jsx";
 import MenuMarquee from "./components/MenuMarquee.jsx";
 import useGsapReveals from "./components/useGsapReveals.js";
 import ProfitabilityShowcase from "./components/ProfitabilityShowcase.jsx";
+import BrandIntroSection from "./components/BrandIntroSection.jsx";
+
 import povImg from "./assets/pov.png";
 
 
@@ -95,66 +97,8 @@ export default function App() {
       </HeroCanvas>
 
       {/* ABOUT */}
-      <section id="about" className="py-32 bg-zinc-900/80 relative">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/korean-pattern.png')]" />
+      <BrandIntroSection />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-20 js-reveal">
-            <span className="text-bio font-bold tracking-widest title-font block mb-2">
-              SINCE 1990
-            </span>
-            <h2 className="text-5xl md:text-6xl text-white mb-6">
-              고집스러운 원칙
-            </h2>
-            <div className="w-24 h-1 bg-fire mx-auto mb-8" />
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              화려함보다는 기본에 충실합니다. 타협하지 않는 식재료와 정성으로
-              연탄구이의 참맛을 지켜갑니다.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="bg-black/50 p-10 rounded-sm js-reveal border-2 border-zinc-800 hover:border-fire transition duration-500 text-center group backdrop-blur-sm">
-              <div className="mb-8">
-                <span className="text-5xl text-fire group-hover:scale-110 transition duration-300 inline-block">
-                  🔥
-                </span>
-              </div>
-              <h3 className="text-3xl text-white mb-6">연탄 불맛의 정수</h3>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                특허받은 청정 연탄 화로를 사용하여 유해 가스는 잡고, 은은하고
-                깊은 불향만을 고기에 입힙니다.
-              </p>
-            </div>
-
-            <div className="bg-black/50 p-10 rounded-sm js-reveal border-2 border-zinc-800 hover:border-bio transition duration-500 text-center group backdrop-blur-sm">
-              <div className="mb-8">
-                <span className="text-5xl text-bio group-hover:scale-110 transition duration-300 inline-block">
-                  🥩
-                </span>
-              </div>
-              <h3 className="text-3xl text-white mb-6">최상급 한돈 선별</h3>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                엄격한 기준으로 선별된 1+ 등급 이상의 국내산 암퇘지만을 사용하여
-                최상의 육질을 보장합니다.
-              </p>
-            </div>
-
-            <div className="bg-black/50 p-10 rounded-sm js-reveal border-2 border-zinc-800 hover:border-fire transition duration-500 text-center group backdrop-blur-sm">
-              <div className="mb-8">
-                <span className="text-5xl text-fire group-hover:scale-110 transition duration-300 inline-block">
-                  🧂
-                </span>
-              </div>
-              <h3 className="text-3xl text-white mb-6">비법 숙성과 찬</h3>
-              <p className="text-gray-400 text-lg leading-relaxed">
-                저온 숙성으로 풍미를 높이고, 매장에서 직접 담근 정갈한 반찬으로
-                고기 맛을 완성합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* MENU */}
       <section id="menu" className="py-32 bg-black relative">
@@ -428,14 +372,14 @@ export default function App() {
                 태백<span className="text-bio">生</span>연탄구이
               </span>
               <p className="text-gray-500 mt-4 text-base leading-relaxed">
-                대표: 홍길동 | 사업자등록번호: 000-00-00000
+                대표: 최승현 | 사업자등록번호: 000-00-00000
                 <br />
-                주소: 경기도 수원시 권선구 세권로 304번길 30-2 (본점)
+                주소: 경기 용인시 처인구 명지로60번길 8-3 j1 주차타워 203호 태백생연탄구이 용인역북점 (본점)
                 <br />
                 가맹문의: 02-1234-5678 | 이메일: contact@taebaek.com
                 <br />
                 <span className="mt-2 block">
-                  Copyright © 2024 Taebaek Saeng Yeontan-gui. All rights
+                  Copyright © 2026. 한양그린푸드. All rights
                   reserved.
                 </span>
               </p>

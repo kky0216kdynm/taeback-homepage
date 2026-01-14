@@ -3,8 +3,11 @@ import MenuMarquee from "./components/MenuMarquee.jsx";
 import useGsapReveals from "./components/useGsapReveals.js";
 import ProfitabilityShowcase from "./components/ProfitabilityShowcase.jsx";
 import BrandIntroSection from "./components/BrandIntroSection.jsx";
+import OrgChartSplitSection from "./components/OrgChartSplitSection.jsx";
+import BrandCompetitivenessSection from "./components/BrandCompetitivenessSection.jsx";
 
-import povImg from "./assets/pov.png";
+
+
 
 
 export default function App() {
@@ -26,11 +29,22 @@ export default function App() {
               </a>
             </div>
 
-            <div className="hidden md:block">
+            
+              <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-              <a href="#about" className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium">
-                브랜드 소개
-              </a>
+                <a
+                  href="#about"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
+                >
+                  브랜드 소개
+                </a>
+
+                <a
+                  href="#org"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
+                >
+                  조직현황
+                </a>
 
                 <a
                   href="#menu"
@@ -38,12 +52,21 @@ export default function App() {
                 >
                   메뉴 안내
                 </a>
+
                 <a
                   href="#business"
                   className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
                 >
                   창업 안내
                 </a>
+
+                <a
+                  href="#profitability"
+                  className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
+                >
+                  수익성
+                </a>
+
                 <a
                   href="#locations"
                   className="hover:text-[#006400] transition duration-300 px-3 py-2 rounded-md font-medium"
@@ -52,6 +75,7 @@ export default function App() {
                 </a>
               </div>
             </div>
+
 
             <div>
               <a
@@ -130,89 +154,8 @@ export default function App() {
           </div>
         </div>
       </section>
-
-      {/* BUSINESS */}
-      <section
-        id="business"
-        className="py-32 bg-zinc-900 border-y border-zinc-800"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="w-full md:w-1/2">
-              <div className="relative rounded-sm shadow-2xl overflow-hidden group">
-                <div className="absolute inset-0 border-4 border-fire/20 z-10 group-hover:border-fire/50 transition duration-500" />
-                <img
-                  src={povImg}
-                  alt="매장 인테리어"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-105"
-                />
-              </div>
-            </div>
-
-            <div className="w-full md:w-1/2">
-              <span className="text-bio font-bold text-xl mb-4 block title-font tracking-widest">
-                성공 창업의 열쇠
-              </span>
-              <h2 className="text-5xl md:text-6xl font-black mb-10 leading-tight">
-                왜 태백생연탄구이인가?
-              </h2>
-
-              <div className="space-y-8">
-                <div className="flex items-start group">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-full bg-fire/20 flex items-center justify-center mt-1 group-hover:bg-fire transition duration-300">
-                    <span className="text-fire text-2xl group-hover:text-white transition duration-300">
-                      💰
-                    </span>
-                  </div>
-                  <div className="ml-6">
-                    <h4 className="text-2xl font-bold text-white mb-2 title-font">
-                      [검증된 수익성]
-                    </h4>
-                    <p className="text-gray-400 text-lg">
-                      [높은 테이블 단가와 회전율로 검증된 안정적인 수익 모델을
-                      제시합니다.]
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start group">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-full bg-bio/20 flex items-center justify-center mt-1 group-hover:bg-bio transition duration-300">
-                    <span className="text-bio text-2xl group-hover:text-white transition duration-300">
-                      👨‍🍳
-                    </span>
-                  </div>
-                  <div className="ml-6">
-                    <h4 className="text-2xl font-bold text-white mb-2 title-font">
-                      [손쉬운 운영 시스템]
-                    </h4>
-                    <p className="text-gray-400 text-lg">
-                      [전문 주방장 없이도 운영 가능한 표준화된 레시피와 교육을
-                      제공합니다.]
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start group">
-                  <div className="flex-shrink-0 h-12 w-12 rounded-full bg-fire/20 flex items-center justify-center mt-1 group-hover:bg-fire transition duration-300">
-                    <span className="text-fire text-2xl group-hover:text-white transition duration-300">
-                      📈
-                    </span>
-                  </div>
-                  <div className="ml-6">
-                    <h4 className="text-2xl font-bold text-white mb-2 title-font">
-                      [지속적인 마케팅 지원]
-                    </h4>
-                    <p className="text-gray-400 text-lg">
-                      [브랜드 인지도 향상과 가맹점 매출 증대를 위한 온/오프라인
-                      마케팅을 지원합니다.]
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <OrgChartSplitSection />
+      <BrandCompetitivenessSection />
       <ProfitabilityShowcase/>
 
       {/* LOCATIONS */}
@@ -374,9 +317,9 @@ export default function App() {
               <p className="text-gray-500 mt-4 text-base leading-relaxed">
                 대표: 최승현 | 사업자등록번호: 000-00-00000
                 <br />
-                주소: 경기 용인시 처인구 명지로60번길 8-3 j1 주차타워 203호 태백생연탄구이 용인역북점 (본점)
+                주소: 경기도 안산시 상록구 한양대학로 55, 창업보육센터 55호
                 <br />
-                가맹문의: 02-1234-5678 | 이메일: contact@taebaek.com
+                가맹문의: 010-9540-5257 | 이메일: 1010jeus@naver.com
                 <br />
                 <span className="mt-2 block">
                   Copyright © 2026. 한양그린푸드. All rights

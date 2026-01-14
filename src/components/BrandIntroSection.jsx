@@ -120,15 +120,6 @@ export default function BrandIntroSection() {
                     <span className="text-white font-bold"> 연탄</span>이
                     있습니다.
                     <br />
-                    <br />
-                    불 앞에 둘러앉아 고기를 굽는 순간,
-                    <br />
-                    자연스럽게 완성되는
-                    <span className="text-white font-bold">
-                      {" "}
-                      편안하고 정겨운 분위기
-                    </span>
-                    를 경험하게 됩니다.
                   </p>
                 </div>
               </div>
@@ -168,8 +159,6 @@ export default function BrandIntroSection() {
                   </div>
                   <p className="text-zinc-300 leading-relaxed text-base md:text-[15px]">
                     트렌드를 반영한 사이드 메뉴로
-                    <br />
-                    고기 한 점, 술 한 잔까지
                     <br />
                     <span className="text-white font-bold">
                       테이블 경험의 완성도

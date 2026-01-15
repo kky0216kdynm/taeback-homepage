@@ -18,21 +18,24 @@ function Pill({ children, className = "" }) {
 
 
 /** ---------- Donut Chart (SVG) + draw animation ---------- */
-function AnimatedArc({ d, color, strokeWidth, delay = 0 }) {
-  return (
-    <path
-      d={d}
-      fill="none"
-      stroke={color}
-      strokeWidth={strokeWidth}
-      strokeLinecap="butt"
-      className="tb-arc"
-      style={{
-        animationDelay: `${delay}s`,
-      }}
-    />
-  );
-}
+function AnimatedArc({ d, color, strokeWidth, length, delay = 0 }) {
+    return (
+      <path
+        d={d}
+        fill="none"
+        stroke={color}
+        strokeWidth={strokeWidth}
+        strokeLinecap="butt"
+        style={{
+          strokeDasharray: length,
+          strokeDashoffset: length,
+          animation: `drawArc 0.9s ease-out forwards`,
+          animationDelay: `${delay}s`,
+        }}
+      />
+    );
+  }
+  
 
 function DonutChart({
   size = 320,
@@ -41,6 +44,12 @@ function DonutChart({
   centerPercentText = "0%",
   centerLabel = "순이익",
 }) {
+    const arcLength = (sweepAngle) => {
+        const circumference = 2 * Math.PI * radius;
+        return (sweepAngle / 360) * circumference;
+      };
+      
+
   const radius = (size - stroke) / 2;
   const cx = size / 2;
   const cy = size / 2;
@@ -66,9 +75,9 @@ function DonutChart({
   const arcs = all.map((seg, i) => {
     const v = Math.max(0, Number(seg.value) || 0);
     const sweep = (v / 100) * 360;
-    const endAngle = startAngle + sweep;
+    const endAngle = startAngle - sweep; // 🔥 반시계 방향
     const largeArc = sweep > 180 ? 1 : 0;
-
+  
     const toXY = (angleDeg) => {
       const a = (Math.PI / 180) * angleDeg;
       return {
@@ -76,24 +85,27 @@ function DonutChart({
         y: cy + radius * Math.sin(a),
       };
     };
-
+  
     const p0 = toXY(startAngle);
     const p1 = toXY(endAngle);
-
-    const d = `M ${p0.x.toFixed(3)} ${p0.y.toFixed(
-      3
-    )} A ${radius} ${radius} 0 ${largeArc} 1 ${p1.x.toFixed(3)} ${p1.y.toFixed(
-      3
-    )}`;
-
+  
+    const d = `
+      M ${p0.x} ${p0.y}
+      A ${radius} ${radius} 0 ${largeArc} 0 ${p1.x} ${p1.y}
+    `;
+  
+    const length = arcLength(sweep);
+  
     startAngle = endAngle;
-
+  
     return {
       key: `${seg.label}-${i}`,
       d,
       color: seg.color,
+      length,
     };
   });
+  
 
   return (
     <div className="relative grid place-items-center">
@@ -110,14 +122,16 @@ function DonutChart({
 
         {/* Arcs: sequential draw */}
         {arcs.map((a, i) => (
-          <AnimatedArc
+        <AnimatedArc
             key={a.key}
             d={a.d}
             color={a.color}
             strokeWidth={stroke}
-            delay={i * 0.12} // <-- “돌면서 생성” 느낌: 순차 그리기
-          />
+            length={a.length}
+            delay={i * 0.12}
+        />
         ))}
+
       </svg>
 
       {/* Center label */}
@@ -170,6 +184,7 @@ function ProfitCard({ title, netText, icon, items, profitPercent }) {
             centerIcon={icon}
             centerPercentText={`${profitPercent}%`}
             centerLabel="순이익"
+            
           />
         </div>
       </div>
